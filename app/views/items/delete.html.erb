@@ -1,0 +1,28 @@
+<h1>Delete Item: <%= @item.sku %>?</h1>
+<%= link_to("return to items view", item_path) %>
+
+<%= form_for(@item, :method => "delete") do |form| %>
+    <p>Are you sure you want to delete this database entry permanently?</p>
+    <table>
+    <tr>
+        <th>ID</th>
+        <th>sku</th>
+        <th>cost</th>
+        <th>amount_in_inventory</th>
+        <th>countries_id</th>
+        <th>province_of_origine</th>
+        <th>last updated</th>
+        <th>date created</th>
+    </tr>
+    <tr>
+        <td><%= @item.id %></td>
+        <td><%= @item.sku %></td>
+        <td><%= @item.cost %></td>
+        <td><%= @item.amount_in_inventory %></td>
+        <td><%= @item.countries_id %></td>
+        <td><%= @item.province_of_origin %></td>
+        <td><%= @item.updated_at %></td>
+        <td><%= @item.created_at %></td>
+</table>
+    <%= form.submit("delete item") %>
+<% end %>

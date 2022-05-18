@@ -1,0 +1,7 @@
+<h1>Item: <%= @item.sku %></h1>
+<%= link_to("return to countries view", items_path) %>
+
+<%= form_for(@item) do |form| %>
+    <%= render(:partial => "form", :locals => {:form => form} ) %>
+    <%= form.submit("add item") %>
+<% end %>

@@ -1,0 +1,21 @@
+<h1>Delete <%= @country.country_name %>?</h1>
+<%= link_to("return to countries view", countries_path) %>
+
+<%= form_for(@country, :method => "delete") do |form| %>
+    <p>Are you sure you want to delete this database entry permanently?</p>
+    <table>
+        <tr>
+            <th>country name</th>
+            <th>country code</th>
+            <th>time last updated</th>
+            <th>time created</th>
+        </tr>
+        <tr>
+            <td><%= @country.country_name %></td>
+            <td><%= @country.country_code %></td>
+            <td><%= @country.updated_at %></td>
+            <td><%= @country.created_at %></td>
+        </tr>
+    </table>
+    <%= form.submit("delete country") %>
+<% end %>

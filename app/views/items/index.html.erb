@@ -1,0 +1,30 @@
+<h1>Inventory Items</h1>
+<p>Find me in app/views/items/index.html.erb</p>
+
+<%= link_to("add new item", new_item_path) %>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>sku</th>
+        <th>cost</th>
+        <th>amount_in_inventory</th>
+        <th>countries_id</th>
+        <th>province_of_origine</th>
+    </tr>
+        <% @items.each do |item| %>
+            <tr>
+            <td><%= item.id %></td>
+            <td><%= item.sku %></td>
+            <td><%= item.cost %></td>
+            <td><%= item.amount_in_inventory %></td>
+            <td><%= item.countries_id %></td>
+            <td><%= item.province_of_origin %></td>
+            <td>
+            <%= link_to("view", item_path(item.id)) %><br>
+            <%= link_to("edit", edit_item_path(item.id)) %><br>
+            <%= link_to("delete", delete_item_path(item.id)) %><br>
+            </tr>
+        <% end %>
+    
+</table>

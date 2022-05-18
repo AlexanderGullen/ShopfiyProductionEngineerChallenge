@@ -1,0 +1,7 @@
+<h1>Country: <%= @country.country_name %></h1>
+<%= link_to("return to countries view", countries_path) %>
+
+<%= form_for(@country) do |form| %>
+    <%= render(:partial => "form", :locals => {:form => form} ) %>
+    <%= form.submit("add country") %>
+<% end %>

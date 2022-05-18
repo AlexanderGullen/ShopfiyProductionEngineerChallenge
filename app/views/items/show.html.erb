@@ -1,0 +1,28 @@
+<h1>Item: <%= @item.sku %></h1>
+<%= link_to("return to inventory view", items_path) %>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>sku</th>
+        <th>cost</th>
+        <th>amount_in_inventory</th>
+        <th>countries_id</th>
+        <th>province_of_origine</th>
+        <th>last updated</th>
+        <th>date created</th>
+    </tr>
+    <tr>
+        <td><%= @item.id %></td>
+        <td><%= @item.sku %></td>
+        <td><%= @item.cost %></td>
+        <td><%= @item.amount_in_inventory %></td>
+        <td><%= @item.countries_id %></td>
+        <td><%= @item.province_of_origin %></td>
+        <td><%= @item.updated_at %></td>
+        <td><%= @item.created_at %></td>
+        <td>
+        <%= link_to("view", item_path(@item.id)) %><br>
+        <%= link_to("edit", edit_item_path(@item.id)) %><br>
+        <%= link_to("delete", delete_item_path(@item.id)) %><br>
+    </tr>
+</table>

@@ -1,0 +1,3 @@
+class HarmonizedSystemCode < ApplicationRecord
+    
+end

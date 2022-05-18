@@ -1,0 +1,19 @@
+    
+    <%= form.label :sku, "Stock Keeping Unit"%>
+    <%= form.text_field :sku %><br>
+    <%= form.label :cost, "Cost of each item"%>
+    <%= form.number_field :cost %><br>
+    <%= form.label :amount_in_inventory, "amount in inventory"%>
+    <%= form.number_field :amount_in_inventory %><br>
+
+    <p> Select item's country of origin </p>
+    <% @country_selection.each do |country| %>
+        <%= form.label :countries_id, country.country_name %>
+        <%= form.radio_button :countries_id, country.id %>
+        <br>
+    <% end %>
+    <%= link_to("add more countries", new_country_path)%>
+    <br>
+    <%= form.label :province_of_origin, "Province of origit"%>
+    <%= form.text_field :province_of_origin %><br>
+    <%= error_messages_for(form.object) %>

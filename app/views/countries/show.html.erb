@@ -1,0 +1,23 @@
+<h1>Country: <%= @country.country_name %></h1>
+<%= link_to("return to countries view", countries_path) %>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>name</th>
+        <th>code</th>
+        <th>created</th>
+        <th>updated</th>
+        <th>links</th>
+    </tr>
+    <tr>
+            <td><%= @country.id %></td>
+            <td><%= @country.country_name %></td>
+            <td><%= @country.country_code %></td>
+            <td><%= @country.created_at %></td>
+            <td><%= @country.updated_at %></td>
+            <td>
+            <%= link_to("edit", edit_country_path(@country.id)) %><br>
+            <%= link_to("delete", delete_country_path(@country.id)) %><br>
+    </tr>
+</table>
+

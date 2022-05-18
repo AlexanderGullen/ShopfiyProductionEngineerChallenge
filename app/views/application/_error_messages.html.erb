@@ -1,0 +1,10 @@
+<%if object && object.errors.size > 0 %>
+    <div class="error-explanation">
+        <h2><%= pluralize(object.errors.size, "error") %> occured while trying to save to a database</h2>
+        <ul>
+            <% object.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+            <%end%>
+        </ul>
+    </div>
+<% end %>
